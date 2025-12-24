@@ -9,7 +9,7 @@
 /* Load theme */
 @import "minimal-mistakes";
 
-/* Sidebar avatar overrides (borrowed pattern) */
+/* Sidebar avatar overrides (borrowed pattern from Humza) */
 .author__avatar {
   width: 180px;
   height: auto;
@@ -20,3 +20,14 @@
   height: auto;
   border-radius: 50%;
 }
+
+/* Make author avatar non-clickable */
+.author__avatar a {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Make SF Bay Area non-clickable */
+.author__urls a.no-click {
+  pointer-events: none;
+  cursor: default;
