@@ -9,14 +9,14 @@
 /* Load theme */
 @import "minimal-mistakes";
 
-/* Sidebar avatar overrides (borrowed pattern from Humza) */
+/* Sidebar avatar overrides */
 .author__avatar {
-  width: 180px;
+  width: 280px;
   height: auto;
 }
 
 .author__avatar img {
-  width: 180px;
+  width: 280px;
   height: auto;
   border-radius: 50%;
 }
@@ -31,3 +31,11 @@
 .author__urls a.no-click {
   pointer-events: none;
   cursor: default;
+}
+
+/* Make author sidebar icons white */
+.author__urls i,
+.author__urls svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
