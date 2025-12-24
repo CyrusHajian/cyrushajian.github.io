@@ -59,7 +59,7 @@ author:
   bio    : "A lifelong learner with a superb work ethic."
   links:
     - label: "SF Bay Area"
-      url: "#"
+      url: ""
       icon: "fa-solid fa-map-location style=color: #ffffff;"
       attributes:
         class: "no-click"
