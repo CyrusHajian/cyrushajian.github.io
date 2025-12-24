@@ -75,11 +75,16 @@ author:
 
 footer:
   links:
+    - label: "SF Bay Area"
+      url: "'hi'"
+      icon: "fa-solid fa-map-location style=color: #ffffff;"
+      attributes:
+        class: "no-click"
     - label: "Email"
-      icon: "fas fa-fw fa-paper-plane"
+      icon: "fa-solid fa-paper-plane style=color: #ffffff;"
       url: "mailto:cyrushajian@gmail.com"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-LinkedIn"
+      icon: "fa-brands fa-linkedin style=color: #ffffff;"
       url: "https://www.linkedin.com/in/cyrushajian/"
     - label: "Github"
       icon: "fab fa-fw fa-github"
