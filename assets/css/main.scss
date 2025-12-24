@@ -21,16 +21,18 @@
   border-radius: 50%;
 }
 
-/* Make author avatar non-clickable */
-.author__avatar a {
-  pointer-events: none;
-  cursor: default;
+/* Force-disable clicking on the author avatar */
+.author__avatar a,
+.author__avatar a img {
+  pointer-events: none !important;
+  cursor: default !important;
 }
 
-/* Make SF Bay Area non-clickable */
-.author__urls a.no-click {
-  pointer-events: none;
-  cursor: default;
+/* Force-disable clicking on the SF Bay Area author link */
+.author__urls a.no-click,
+.author__urls li.no-click a {
+  pointer-events: none !important;
+  cursor: default !important;
 }
 
 /* Make author sidebar icons white */
