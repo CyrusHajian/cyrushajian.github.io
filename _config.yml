@@ -59,12 +59,13 @@ author:
   bio    : "A lifelong learner with a superb work ethic."
   links:
     - label: "SF Bay Area"
+      url: " "
       icon: "fa-thin fa-map-location-dot"
     - label: "Email"
       icon: "<fas fa-fw fa-paper-plane"
       url: "mailto:cyrushajian@gmail.com"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-LinkedIn"
+      icon: "fa-brands fa-linkedin style=color: #ffffff;"
       url: "https://www.linkedin.com/in/cyrushajian/"
     - label: "Github"
       icon: "fab fa-fw fa-github"
@@ -73,7 +74,7 @@ author:
 footer:
   links:
     - label: "Email"
-      icon: "<fas fa-fw fa-paper-plane"
+      icon: "fas fa-fw fa-paper-plane"
       url: "mailto:cyrushajian@gmail.com"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-LinkedIn"
