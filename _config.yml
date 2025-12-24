@@ -54,7 +54,7 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
+  name   : "Cyrus M. Hajian"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "A lifelong learner with a superb work ethic."
   links:
