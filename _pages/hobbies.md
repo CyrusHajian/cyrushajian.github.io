@@ -2,7 +2,7 @@
 title: "Hobbies"
 layout: single
 permalink: /hobbies/
-author_profile: true
+author_profile: false
 classes: hobbies-page
 ---
 My passions outside of science and academia.
