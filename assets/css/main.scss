@@ -223,33 +223,40 @@ body {
   }
 }
 
-/* Hobbies: hide left sidebar after scrolling and let content fill */
+/* =========================================================
+   Hobbies page: fully remove sidebar on scroll
+   ========================================================= */
+
 @media (min-width: 64em) {
-  body.hobbies-page.hobbies-scrolled .sidebar {
-    opacity: 0;
-    transform: translateX(-12px);
-    pointer-events: none;
+
+  /* Desktop grid: default = sidebar + content */
+  body:not(.hobbies-scrolled) .initial-content {
+    grid-template-columns: 300px 1fr;
   }
 
-  body.hobbies-page.hobbies-scrolled .layout--single .sidebar {
-    width: 0 !important;
-    margin-right: 0 !important;
+  /* When scrolled: remove sidebar column entirely */
+  body.hobbies-scrolled .initial-content {
+    grid-template-columns: 0 1fr;
   }
 
-  body.hobbies-page.hobbies-scrolled .layout--single .page {
+  /* Hide sidebar completely */
+  body.hobbies-scrolled .sidebar {
+    display: none !important;
+  }
+
+  /* Content expands */
+  body.hobbies-scrolled #main,
+  body.hobbies-scrolled .page,
+  body.hobbies-scrolled .archive,
+  body.hobbies-scrolled .page__inner-wrap,
+  body.hobbies-scrolled .page__content {
     width: 100% !important;
-  }
-
-  body.hobbies-page.hobbies-scrolled .layout--single .page__inner-wrap,
-  body.hobbies-page.hobbies-scrolled .layout--single .page__content {
     max-width: none !important;
+    margin-left: 0 !important;
   }
 
-  /* nice transition */
-  body.hobbies-page .sidebar,
-  body.hobbies-page .layout--single .page,
-  body.hobbies-page .layout--single .page__inner-wrap,
-  body.hobbies-page .layout--single .page__content {
-    transition: opacity 180ms ease, transform 180ms ease, width 220ms ease, margin 220ms ease, max-width 220ms ease;
+  /* Smoothness */
+  .initial-content {
+    transition: grid-template-columns 220ms ease;
   }
 }

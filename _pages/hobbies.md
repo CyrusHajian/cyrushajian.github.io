@@ -25,7 +25,7 @@ I love iterating a recipe until it suits the taste of myself, or whomever I'm se
 
   <div class="two-col-text">
     <p>
-      Fishing has always been one of my favorite ways to experience nature. I am an experienced surf, lake, and river fisherman. I find the strategy for fishing fascinating, changing baits to reflect the target species' prey, surveying surroundings to find places fish will likely be, and the overall idea of using a hidden line attached to bait with the goal of enticing a predator into attacking it... (maybe I'm just weird). Anyways, fishing tends to take me to some beautiful places.
+      Fishing has always been one of my favorite ways to experience nature. I am an experienced surf, lake, and river fisherman. For shark fishing, I make steel leaders for myself and others. I find the strategy for fishing fascinating, changing baits to reflect the target species' prey, surveying surroundings to find places fish will likely be, and the overall idea of using a hidden line attached to bait with the goal of enticing a predator into attacking it... (maybe I'm just weird). Anyways, fishing tends to take me to some beautiful places.
     </p>
   </div>
 
