@@ -259,44 +259,5 @@ body {
   }
 }
 
-/* =========================================================
-   Hobbies page: remove excess top whitespace
-   ========================================================= */
 
-body.hobbies-page {
-  .page,
-  .page__inner-wrap,
-  .page__content,
-  .archive {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
 
-  .initial-content {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    align-items: start;
-  }
-
-  .page__hero,
-  .page__hero--overlay {
-    margin: 0 !important;
-    padding: 0 !important;
-    min-height: 0 !important;
-  }
-}
-/* =========================================================
-   Hobbies page: push title down slightly under the nav
-   ========================================================= */
-
-body.hobbies-page {
-  /* Add space above the title area */
-  .page__inner-wrap {
-    padding-top: clamp(0.75rem, 2vw, 1.5rem);
-  }
-
-  /* Optional: fine-tune the H1 itself */
-  h1.page__title {
-    margin-top: 0 !important;
-  }
-}
