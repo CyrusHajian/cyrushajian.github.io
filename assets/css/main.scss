@@ -224,27 +224,67 @@ body {
 }
 
 /* =========================================================
-   Hobbies page: fully remove sidebar on scroll
+   Hobbies page: smooth sidebar collapse on scroll (buttery)
    ========================================================= */
 
 @media (min-width: 64em) {
+
+  /* Buttery easing + duration */
+  $hobbies-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  $hobbies-dur: 650ms;
 
   /* Desktop grid: default = sidebar + content */
   body:not(.hobbies-scrolled) .initial-content {
     grid-template-columns: 300px 1fr;
   }
 
-  /* When scrolled: remove sidebar column entirely */
+  /* When scrolled: collapse the sidebar column (animates) */
   body.hobbies-scrolled .initial-content {
     grid-template-columns: 0 1fr;
   }
 
-  /* Hide sidebar completely */
-  body.hobbies-scrolled .sidebar {
-    display: none !important;
+  /* Smoothness for the grid reflow */
+  .initial-content {
+    transition: grid-template-columns $hobbies-dur $hobbies-ease;
   }
 
-  /* Content expands */
+  /* Sidebar: animate out (no display:none because that cannot animate) */
+  body .sidebar {
+    max-width: 300px;
+    opacity: 1;
+    transform: translateX(0);
+    overflow: visible;
+
+    transition:
+      max-width $hobbies-dur $hobbies-ease,
+      opacity  $hobbies-dur $hobbies-ease,
+      transform $hobbies-dur $hobbies-ease;
+
+    will-change: max-width, opacity, transform;
+  }
+
+  body.hobbies-scrolled .sidebar {
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(-18px);
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  /* Content expands smoothly */
+  body .page,
+  body .archive,
+  body .page__inner-wrap,
+  body .page__content,
+  body #main {
+    transition:
+      width     $hobbies-dur $hobbies-ease,
+      max-width $hobbies-dur $hobbies-ease,
+      margin    $hobbies-dur $hobbies-ease;
+
+    will-change: width, max-width, margin;
+  }
+
   body.hobbies-scrolled #main,
   body.hobbies-scrolled .page,
   body.hobbies-scrolled .archive,
@@ -253,10 +293,5 @@ body {
     width: 100% !important;
     max-width: none !important;
     margin-left: 0 !important;
-  }
-
-  /* Smoothness */
-  .initial-content {
-    transition: grid-template-columns 220ms ease;
   }
 }
