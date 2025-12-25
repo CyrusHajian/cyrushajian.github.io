@@ -32,7 +32,7 @@ body {
   max-width: 200px;        /* overall size */
   width: 100%;
   aspect-ratio: 1 / 1;     /* prevents tall/oval rendering */
-  height: auto;
+  height: 200px;
   display: block;
   margin: 0 auto;
   object-fit: cover;
