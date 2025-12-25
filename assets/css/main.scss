@@ -9,18 +9,23 @@
 /* Load theme */
 @import "minimal-mistakes";
 
-/* === Author avatar sizing (wider) === */
+
+./* === Author avatar with thicker frame === */
 .author__avatar {
-  width: 260px;
-  max-width: 260px;
-  margin: 0 auto 1rem auto;
+  width: 300px;          /* FRAME size */
+  height: 300px;
+  padding: 12px;         /* space between frame and photo */
+  margin: 0 auto 1.25rem auto;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .author__avatar img {
-  width: 260px;
-  height: 260px;
+  width: 100%;           /* PHOTO size */
+  height: 100%;
   object-fit: cover;
-  border-radius: 50%; /* keep circular; change to 45% if you want subtle oval */
+  border-radius: 50%;
+  background: transparent;
 }
 
 /* === Prevent horizontal overflow === */
@@ -49,6 +54,13 @@ html, body {
 /* Force-disable clicking on the SF Bay Area author link */
 .author__urls a.no-click,
 .author__urls li.no-click a {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+/* Force-disable clicking on the SF Bay Area author link footer */
+.footer__urls a.no-click,
+.footer__urls li.no-click a {
   pointer-events: none !important;
   cursor: default !important;
 }
