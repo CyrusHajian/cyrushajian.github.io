@@ -48,13 +48,6 @@
   cursor: default !important;
 }
 
-/* If you also added no-click links in the footer */
-.footer__urls a.no-click,
-.footer__urls li.no-click a {
-  pointer-events: none !important;
-  cursor: default !important;
-}
-
 /* Make author sidebar icons white */
 .author__urls i,
 .author__urls svg {
