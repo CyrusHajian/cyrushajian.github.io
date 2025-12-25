@@ -98,3 +98,50 @@ body {
     filter: none !important;
   }
 }
+
+/* =========================================================
+   Widen the CONTENT column (use the blank space on the right)
+   Works for Home + Pages (CV, etc.) with a left sidebar
+   ========================================================= */
+
+@media (min-width: 80em) {
+
+  /* Let the overall wrapper be wide */
+  .initial-content #main {
+    max-width: none !important;
+  }
+
+  /* Make the inner wrap use the full available width */
+  .layout--home .archive,
+  .layout--single .page,
+  .layout--single .page__inner-wrap {
+    max-width: none !important;
+  }
+
+  /* Sidebar fixed width */
+  .layout--home .sidebar,
+  .layout--single .sidebar {
+    width: 300px !important;
+    margin-right: 24px !important;
+  }
+
+  /* HOME: archive takes remaining width */
+  .layout--home .archive {
+    width: calc(100% - 324px) !important; /* 300 + 24 gap */
+    padding-right: 0 !important;
+  }
+
+  /* SINGLE PAGES (CV): page takes remaining width */
+  .layout--single .page {
+    width: calc(100% - 400px) !important;
+  }
+
+  /* Kill the right padding that creates the “dead zone” */
+  .layout--single .page__inner-wrap,
+  .layout--single .page__content,
+  .layout--home .archive__item {
+    padding-right: 0 !important;
+  }
+
+
+}

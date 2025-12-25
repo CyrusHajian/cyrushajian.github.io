@@ -3,6 +3,8 @@ main:
     url: /research/
   - title: "Outside the Lab"
     url: /outside-the-lab/
+  - title: "Hobbies"
+    url: /hobbies/
   - title: "Adventures"
     url: /adventures/
   - title: "CV"
