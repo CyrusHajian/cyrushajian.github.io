@@ -108,3 +108,25 @@ body {
   width: 100% !important;
   height: 100% !important;
 }
+
+/* FORCE: avatar size + frame (based on actual DOM) */
+.sidebar.sticky .author__avatar {
+  width: 320px !important;           /* outer frame diameter */
+  height: 320px !important;
+  padding: 14px !important;          /* frame thickness */
+  margin: 0 auto 1.25rem auto !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  box-sizing: border-box !important;
+}
+
+/* Make the image inset so the frame is visible */
+.sidebar.sticky .author__avatar img {
+  width: calc(320px - 28px) !important;   /* outer - (2 * padding) */
+  height: calc(320px - 28px) !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  border: 3px solid rgba(255, 255, 255, 0.25) !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
