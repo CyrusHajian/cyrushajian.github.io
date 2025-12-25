@@ -17,19 +17,17 @@ body {
 }
 
 /* =========================================================
-   Author avatar — centered in sidebar, less tall
+   Author avatar — centered in sidebar
    ========================================================= */
 
-/* Center avatar container in the first (left) column */
 .sidebar .author__avatar {
   display: flex;
   justify-content: center;
-  margin: 0.75rem 0 1rem 0; /* tighter vertical spacing */
+  margin: 0.75rem 0 1rem 0;
 }
 
-/* Avatar image: smaller + square so it’s not tall */
 .sidebar .author__avatar img {
-  max-width: 260px;        /* overall size */
+  max-width: 260px;
   width: 100%;
   height: 300px;
   display: block;
@@ -46,51 +44,41 @@ body {
   cursor: default;
 }
 
-
-
-
-
 /* =========================================================
    Author links
    ========================================================= */
 
-/* Disable clicking on specific author links (e.g., SF Bay Area) */
 .sidebar .author__urls a.no-click,
 .sidebar .author__urls li.no-click a {
   pointer-events: none;
   cursor: default;
 }
 
-/* Make author sidebar icons white */
 .sidebar .author__urls i,
 .sidebar .author__urls svg {
   color: #ffffff;
   fill: #ffffff;
 }
 
-/* Sidebar lights up on hover EXCEPT the portrait */
+/* Sidebar hover behavior */
 @media (min-width: 80em) {
-  /* Keep sidebar itself stable (no global opacity change) */
   .sidebar,
   .sidebar:hover {
     opacity: 1 !important;
     transition: none !important;
   }
 
-  /* Default state: dim everything except avatar */
   .sidebar .author__content,
   .sidebar .author__urls-wrapper {
     opacity: 0.75;
     transition: opacity 0.25s ease;
   }
 
-  /* Hover state: "light up" the non-portrait content */
   .sidebar:hover .author__content,
   .sidebar:hover .author__urls-wrapper {
     opacity: 1;
   }
 
-  /* Portrait never changes */
   .sidebar .author__avatar,
   .sidebar .author__avatar * {
     opacity: 1 !important;
@@ -100,70 +88,62 @@ body {
 }
 
 /* =========================================================
-   Widen the CONTENT column (use the blank space on the right)
-   Works for Home + Pages (CV, etc.) with a left sidebar
+   Widen content column (desktop)
    ========================================================= */
 
 @media (min-width: 80em) {
-
-  /* Let the overall wrapper be wide */
   .initial-content #main {
     max-width: none !important;
   }
 
-  /* Make the inner wrap use the full available width */
   .layout--home .archive,
   .layout--single .page,
   .layout--single .page__inner-wrap {
     max-width: none !important;
   }
 
-  /* Sidebar fixed width */
   .layout--home .sidebar,
   .layout--single .sidebar {
     width: 300px !important;
     margin-right: 24px !important;
   }
 
-  /* HOME: archive takes remaining width */
   .layout--home .archive {
-    width: calc(100% - 324px) !important; /* 300 + 24 gap */
+    width: calc(100% - 324px) !important;
     padding-right: 0 !important;
   }
 
-  /* SINGLE PAGES (CV): page takes remaining width */
   .layout--single .page {
     width: calc(100% - 400px) !important;
   }
 
-  /* Kill the right padding that creates the “dead zone” */
   .layout--single .page__inner-wrap,
   .layout--single .page__content,
   .layout--home .archive__item {
     padding-right: 0 !important;
   }
-
-
 }
 
 /* =========================================================
-   Hobbies page: text + right-side image column
+   Hobbies page: responsive text + image rail
    ========================================================= */
 
 .hobbies-layout {
   display: grid;
-  grid-template-columns: 1fr 320px; /* text | images */
-  gap: 2rem;
+  grid-template-columns: 1fr clamp(220px, 28vw, 520px);
+  gap: clamp(1rem, 2.5vw, 2.25rem);
   align-items: start;
 }
 
 .hobbies-images img {
   width: 100%;
+  height: auto;
   margin-bottom: 1rem;
   border-radius: 6px;
+  display: block;
 }
 
-/* Stack on mobile */
+/* Mobile */
 @media (max-width: 64em) {
   .hobbies-layout {
     grid-template-columns: 1fr;
@@ -182,13 +162,13 @@ body {
 }
 
 /* =========================================================
-   Two-column text + right-bleeding image
+   Two-column text + image (responsive)
    ========================================================= */
 
 .two-col-bleed {
   display: grid;
-  grid-template-columns: 1fr 380px; /* text | image */
-  gap: 2rem;
+  grid-template-columns: 1fr clamp(260px, 34vw, 640px);
+  gap: clamp(1rem, 2.5vw, 2.25rem);
   align-items: start;
 }
 
@@ -196,102 +176,112 @@ body {
   max-width: 100%;
 }
 
-/* Reuse your existing bleed-right utility */
 .bleed-right {
-  width: min(520px, 100%);
+  width: 100%;
   justify-self: end;
-  margin-right: 0;
-  max-width: 100% !important;
+  max-width: 100%;
 }
-
 
 .bleed-right img {
   width: 100%;
+  height: auto;
   display: block;
   border-radius: 12px;
 }
 
-/* Mobile: stack */
+/* Mobile */
 @media (max-width: 768px) {
   .two-col-bleed {
     grid-template-columns: 1fr;
   }
+}
 
-  .bleed-right {
-    width: 100%;
-    margin-right: 0;
+/* =========================================================
+   Hobbies page: buttery sidebar collapse on scroll
+   ========================================================= */
+
+@media (min-width: 64em) {
+  body.hobbies-page {
+    $ease: cubic-bezier(0.22, 1, 0.36, 1);
+    $dur: 650ms;
+
+    .initial-content {
+      transition: grid-template-columns $dur $ease;
+    }
+
+    &:not(.hobbies-scrolled) .initial-content {
+      grid-template-columns: 300px 1fr;
+    }
+
+    &.hobbies-scrolled .initial-content {
+      grid-template-columns: 0 1fr;
+    }
+
+    .sidebar {
+      max-width: 300px;
+      opacity: 1;
+      transform: translateX(0);
+      transition:
+        max-width $dur $ease,
+        opacity  $dur $ease,
+        transform $dur $ease;
+      will-change: max-width, opacity, transform;
+    }
+
+    &.hobbies-scrolled .sidebar {
+      max-width: 0;
+      opacity: 0;
+      transform: translateX(-18px);
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    #main,
+    .page,
+    .archive,
+    .page__inner-wrap,
+    .page__content {
+      transition:
+        width     $dur $ease,
+        max-width $dur $ease,
+        margin    $dur $ease;
+    }
+
+    &.hobbies-scrolled #main,
+    &.hobbies-scrolled .page,
+    &.hobbies-scrolled .archive,
+    &.hobbies-scrolled .page__inner-wrap,
+    &.hobbies-scrolled .page__content {
+      width: 100% !important;
+      max-width: none !important;
+      margin-left: 0 !important;
+    }
   }
 }
 
 /* =========================================================
-   Hobbies page: smooth sidebar collapse on scroll (buttery)
+   Hobbies page: remove excess top whitespace
    ========================================================= */
 
-@media (min-width: 64em) {
-
-  /* Buttery easing + duration */
-  $hobbies-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  $hobbies-dur: 650ms;
-
-  /* Desktop grid: default = sidebar + content */
-  body:not(.hobbies-scrolled) .initial-content {
-    grid-template-columns: 300px 1fr;
+body.hobbies-page {
+  .page,
+  .page__inner-wrap,
+  .page__content,
+  .archive {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 
-  /* When scrolled: collapse the sidebar column (animates) */
-  body.hobbies-scrolled .initial-content {
-    grid-template-columns: 0 1fr;
-  }
-
-  /* Smoothness for the grid reflow */
   .initial-content {
-    transition: grid-template-columns $hobbies-dur $hobbies-ease;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    align-items: start;
   }
 
-  /* Sidebar: animate out (no display:none because that cannot animate) */
-  body .sidebar {
-    max-width: 300px;
-    opacity: 1;
-    transform: translateX(0);
-    overflow: visible;
-
-    transition:
-      max-width $hobbies-dur $hobbies-ease,
-      opacity  $hobbies-dur $hobbies-ease,
-      transform $hobbies-dur $hobbies-ease;
-
-    will-change: max-width, opacity, transform;
-  }
-
-  body.hobbies-scrolled .sidebar {
-    max-width: 0;
-    opacity: 0;
-    transform: translateX(-18px);
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  /* Content expands smoothly */
-  body .page,
-  body .archive,
-  body .page__inner-wrap,
-  body .page__content,
-  body #main {
-    transition:
-      width     $hobbies-dur $hobbies-ease,
-      max-width $hobbies-dur $hobbies-ease,
-      margin    $hobbies-dur $hobbies-ease;
-
-    will-change: width, max-width, margin;
-  }
-
-  body.hobbies-scrolled #main,
-  body.hobbies-scrolled .page,
-  body.hobbies-scrolled .archive,
-  body.hobbies-scrolled .page__inner-wrap,
-  body.hobbies-scrolled .page__content {
-    width: 100% !important;
-    max-width: none !important;
-    margin-left: 0 !important;
+  .page__hero,
+  .page__hero--overlay {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 0 !important;
   }
 }
