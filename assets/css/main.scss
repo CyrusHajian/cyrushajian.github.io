@@ -2,62 +2,65 @@
 ---
 @charset "utf-8";
 
-/* Load skin + theme */
+/* =========================================================
+   Minimal Mistakes: skin + base theme
+   ========================================================= */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
 @import "minimal-mistakes";
 
-/* ---------------------------------------------------------
-   Author avatar sizing (Minimal Mistakes-compatible override)
-   The theme applies key avatar sizing at its large breakpoint
-   (min-width: 80em), so we override there too.
-   --------------------------------------------------------- */
+/* =========================================================
+   Layout safety
+   ========================================================= */
+html,
+body {
+  overflow-x: hidden;
+}
 
-/* Base (mobile / small screens) */
-.author__avatar img {
-  max-width: 160px;
+/* =========================================================
+   Author avatar — centered in sidebar, less tall
+   ========================================================= */
+
+/* Center avatar container in the first (left) column */
+.sidebar .author__avatar {
+  display: flex;
+  justify-content: center;
+  margin: 0.75rem 0 1rem 0; /* tighter vertical spacing */
+}
+
+/* Avatar image: smaller + square so it’s not tall */
+.sidebar .author__avatar img {
+  max-width: 200px;        /* overall size */
   width: 100%;
+  aspect-ratio: 1 / 1;     /* prevents tall/oval rendering */
   height: auto;
-  border-radius: 50%;
   display: block;
   margin: 0 auto;
   object-fit: cover;
-}
-
-/* Large screens (theme breakpoint) */
-@media (min-width: 80em) {
-  .author__avatar img {
-    max-width: 240px;   /* <<< CHANGE THIS NUMBER to your desired size */
-  }
-}
-
-/* Optional: add a subtle frame/ring (works at all sizes) */
-.author__avatar img {
+  border-radius: 50%;
   border: 4px solid rgba(255, 255, 255, 0.25);
 }
 
-/* Make avatar non-clickable */
-.author__avatar a,
-.author__avatar a img {
+/* Disable avatar click */
+.sidebar .author__avatar a,
+.sidebar .author__avatar a img {
   pointer-events: none;
   cursor: default;
 }
 
+/* =========================================================
+   Author links
+   ========================================================= */
+
 /* Disable clicking on specific author links (e.g., SF Bay Area) */
-.author__urls a.no-click,
-.author__urls li.no-click a {
+.sidebar .author__urls a.no-click,
+.sidebar .author__urls li.no-click a {
   pointer-events: none;
   cursor: default;
 }
 
 /* Make author sidebar icons white */
-.author__urls i,
-.author__urls svg {
+.sidebar .author__urls i,
+.sidebar .author__urls svg {
   color: #ffffff;
   fill: #ffffff;
-}
-
-/* Prevent horizontal overflow */
-html,
-body {
-  overflow-x: hidden;
 }
