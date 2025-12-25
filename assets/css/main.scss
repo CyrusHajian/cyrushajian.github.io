@@ -2,72 +2,56 @@
 ---
 @charset "utf-8";
 
-/* =========================================================
-   Minimal Mistakes: skin + base theme
-   ========================================================= */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
 @import "minimal-mistakes";
 
-/* =========================================================
-   Sidebar width (REQUIRED to allow larger avatar)
-   ========================================================= */
+/* Layout safety */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Sidebar sizing (desktop) */
 @media (min-width: 1024px) {
   .sidebar {
     width: 300px;
   }
 }
 
-/* =========================================================
-   Author avatar (size, frame, centering)
-   ========================================================= */
-
-/* Avatar container */
-.author__avatar {
+/* Author avatar */
+.sidebar .author__avatar {
   text-align: center;
   margin-bottom: 1.25rem;
 }
 
-/* Avatar image — THIS is the size limiter in Minimal Mistakes */
-.author__avatar img {
-  max-width: 240px;                 /* ACTUAL avatar size */
+.sidebar .author__avatar img {
+  max-width: 240px; /* avatar size */
   width: 100%;
   height: auto;
-  border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.25);
   display: block;
   margin: 0 auto;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  object-fit: cover;
 }
 
-/* Make avatar non-clickable (even if wrapped later) */
-.author__avatar a,
-.author__avatar a img {
+/* Make avatar non-clickable */
+.sidebar .author__avatar a,
+.sidebar .author__avatar a img {
   pointer-events: none;
   cursor: default;
 }
 
-/* =========================================================
-   Author links
-   ========================================================= */
-
-/* Disable clicking on specific author links (e.g., SF Bay Area) */
-.author__urls a.no-click,
-.author__urls li.no-click a {
+/* Author links: disable specific items */
+.sidebar .author__urls a.no-click,
+.sidebar .author__urls li.no-click a {
   pointer-events: none;
   cursor: default;
 }
 
-/* Make author sidebar icons white */
-.author__urls i,
-.author__urls svg {
+/* Author link icons */
+.sidebar .author__urls i,
+.sidebar .author__urls svg {
   color: #ffffff;
   fill: #ffffff;
-}
-
-/* =========================================================
-   Layout safety
-   ========================================================= */
-
-html,
-body {
-  overflow-x: hidden;
 }
