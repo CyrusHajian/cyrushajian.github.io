@@ -7,21 +7,41 @@
 @import "minimal-mistakes";
 
 /* =========================
-   Author sidebar: avatar
+   Layout safety
    ========================= */
 
-/* Avatar frame + sizing */
-.author__avatar {
-  width: 300px;                 /* frame size */
-  height: 300px;
-  padding: 12px;                /* frame thickness */
-  margin: 0 auto 1.25rem auto;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
+html,
+body {
+  overflow-x: hidden;
 }
 
-/* Avatar image */
-.author__avatar img {
+.sidebar {
+  overflow: hidden; /* prevent any bleed */
+}
+
+.sidebar,
+.author__content,
+.author__urls-wrapper {
+  max-width: 100%;
+}
+
+/* =========================
+   Author sidebar: avatar (frame + sizing)
+   ========================= */
+
+.sidebar .author__avatar {
+  float: none !important;               /* override theme float */
+  display: block !important;
+  width: 260px;
+  height: 260px;
+  padding: 12px;                         /* frame thickness */
+  margin: 0 auto 1.25rem auto;           /* center */
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12); /* frame color */
+}
+
+.sidebar .author__avatar img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -31,8 +51,8 @@
 }
 
 /* Disable clicking on avatar (belt + suspenders) */
-.author__avatar a,
-.author__avatar a img {
+.sidebar .author__avatar a,
+.sidebar .author__avatar a img {
   pointer-events: none !important;
   cursor: default !important;
 }
@@ -56,49 +76,23 @@
 }
 
 /* =========================
-   Layout safety
+   Sidebar hover highlight: exclude avatar
    ========================= */
 
-html,
-body {
-  overflow-x: hidden;
+/* Remove hover/overlay from the whole author card */
+.sidebar .author__profile:hover,
+.sidebar .author__profile:hover * {
+  background: transparent !important;
 }
 
-.sidebar,
-.author__content,
-.author__urls-wrapper {
-  max-width: 100%;
+/* Re-apply hover highlight only to text + links (not avatar) */
+.sidebar .author__content:hover,
+.sidebar .author__urls-wrapper:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
 }
 
-/* =========================
-   FIX: keep avatar inside sidebar + center + wider
-   ========================= */
-
-/* Ensure sidebar is the containing block */
-.sidebar {
-  overflow: hidden;
-}
-
-/* Kill float/bleed behavior and force block centering */
-.sidebar .author__avatar {
-  float: none !important;
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-
-  width: 260px;          /* widen safely */
-  height: 260px;
-  padding: 12px;         /* frame thickness */
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-/* Keep the photo perfectly contained */
-.sidebar .author__avatar img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.25);
+/* Ensure avatar never gets hover background */
+.sidebar .author__avatar,
+.sidebar .author__avatar * {
+  background: transparent !important;
 }
