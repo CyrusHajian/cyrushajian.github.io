@@ -25,8 +25,6 @@ markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
 timezone: America/Los_Angeles
 
 include:
@@ -73,9 +71,6 @@ author:
 
 footer:
   links:
-    - label: "SF Bay Area"
-      url: "#"
-      icon: "fas fa-fw fa-map-marker-alt"
     - label: "Email"
       icon: "fa-solid fa-paper-plane style=color: #ffffff;"
       url: "mailto:cyrushajian@gmail.com"

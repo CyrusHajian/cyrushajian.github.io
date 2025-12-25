@@ -31,8 +31,7 @@ body {
 .sidebar .author__avatar img {
   max-width: 260px;        /* overall size */
   width: 100%;
-  aspect-ratio: 1 / 1;     /* prevents tall/oval rendering */
-  height: auto;
+  height: 300px;
   display: block;
   margin: 0 20px 0 0;
   object-fit: cover;
@@ -47,10 +46,9 @@ body {
   cursor: default;
 }
 
-/* Remove hover background from avatar only, keep it for text */
-.sidebar .author__profile:hover .author__avatar {
-  background: transparent !important;
-}
+
+
+
 
 /* =========================================================
    Author links
@@ -68,4 +66,35 @@ body {
 .sidebar .author__urls svg {
   color: #ffffff;
   fill: #ffffff;
+}
+
+/* Sidebar lights up on hover EXCEPT the portrait */
+@media (min-width: 80em) {
+  /* Keep sidebar itself stable (no global opacity change) */
+  .sidebar,
+  .sidebar:hover {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  /* Default state: dim everything except avatar */
+  .sidebar .author__content,
+  .sidebar .author__urls-wrapper {
+    opacity: 0.75;
+    transition: opacity 0.25s ease;
+  }
+
+  /* Hover state: "light up" the non-portrait content */
+  .sidebar:hover .author__content,
+  .sidebar:hover .author__urls-wrapper {
+    opacity: 1;
+  }
+
+  /* Portrait never changes */
+  .sidebar .author__avatar,
+  .sidebar .author__avatar * {
+    opacity: 1 !important;
+    transition: none !important;
+    filter: none !important;
+  }
 }
