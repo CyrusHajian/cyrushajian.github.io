@@ -9,17 +9,35 @@
 /* Load theme */
 @import "minimal-mistakes";
 
-/* Sidebar avatar overrides */
+/* === Author avatar sizing (image + frame) === */
 .author__avatar {
-  width: 280px;
-  height: auto;
+  width: 220px;
+  max-width: 220px;
+  margin: 0 auto 1rem auto; /* center it */
 }
 
 .author__avatar img {
-  width: 280px;
-  height: auto;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
   border-radius: 50%;
 }
+
+/* === Prevent horizontal overflow === */
+html, body {
+  overflow-x: hidden;
+}
+
+.sidebar,
+.author__content,
+.author__urls-wrapper {
+  max-width: 100%;
+}
+
+.author__avatar img {
+  border: 3px solid rgba(255,255,255,0.25);
+}
+
 
 /* Force-disable clicking on the author avatar */
 .author__avatar a,
