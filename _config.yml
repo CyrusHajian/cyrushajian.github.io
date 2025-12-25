@@ -51,6 +51,9 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
+after_footer_scripts:
+  - /assets/js/hobbies-scroll.js
+
 author:
   name   : "Cyrus M. Hajian"
   avatar : "/assets/images/bio-photo.jpg"
@@ -106,3 +109,4 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+

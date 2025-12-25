@@ -145,3 +145,111 @@ body {
 
 
 }
+
+/* =========================================================
+   Hobbies page: text + right-side image column
+   ========================================================= */
+
+.hobbies-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px; /* text | images */
+  gap: 2rem;
+  align-items: start;
+}
+
+.hobbies-images img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+/* Stack on mobile */
+@media (max-width: 64em) {
+  .hobbies-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hobbies-images {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+  }
+
+  .hobbies-images img {
+    width: 240px;
+    flex-shrink: 0;
+  }
+}
+
+/* =========================================================
+   Two-column text + right-bleeding image
+   ========================================================= */
+
+.two-col-bleed {
+  display: grid;
+  grid-template-columns: 1fr 380px; /* text | image */
+  gap: 2rem;
+  align-items: start;
+}
+
+.two-col-text {
+  max-width: 100%;
+}
+
+/* Reuse your existing bleed-right utility */
+.bleed-right {
+  width: min(520px, 100%);
+  justify-self: end;
+  margin-right: 0;
+  max-width: 100% !important;
+}
+
+
+.bleed-right img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Mobile: stack */
+@media (max-width: 768px) {
+  .two-col-bleed {
+    grid-template-columns: 1fr;
+  }
+
+  .bleed-right {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* Hobbies: hide left sidebar after scrolling and let content fill */
+@media (min-width: 64em) {
+  body.hobbies-page.hobbies-scrolled .sidebar {
+    opacity: 0;
+    transform: translateX(-12px);
+    pointer-events: none;
+  }
+
+  body.hobbies-page.hobbies-scrolled .layout--single .sidebar {
+    width: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.hobbies-page.hobbies-scrolled .layout--single .page {
+    width: 100% !important;
+  }
+
+  body.hobbies-page.hobbies-scrolled .layout--single .page__inner-wrap,
+  body.hobbies-page.hobbies-scrolled .layout--single .page__content {
+    max-width: none !important;
+  }
+
+  /* nice transition */
+  body.hobbies-page .sidebar,
+  body.hobbies-page .layout--single .page,
+  body.hobbies-page .layout--single .page__inner-wrap,
+  body.hobbies-page .layout--single .page__content {
+    transition: opacity 180ms ease, transform 180ms ease, width 220ms ease, margin 220ms ease, max-width 220ms ease;
+  }
+}
