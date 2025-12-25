@@ -13,7 +13,7 @@
    ========================================================= */
 @media (min-width: 1024px) {
   .sidebar {
-    width: 360px;
+    width: 300px;
   }
 }
 
@@ -29,7 +29,7 @@
 
 /* Avatar image — THIS is the size limiter in Minimal Mistakes */
 .author__avatar img {
-  max-width: 280px;                 /* ACTUAL avatar size */
+  max-width: 240px;                 /* ACTUAL avatar size */
   width: 100%;
   height: auto;
   border-radius: 50%;
