@@ -2,7 +2,7 @@
   // Run only on the Hobbies page (requires classes: hobbies-page in front matter)
   if (!document.body.classList.contains("hobbies-page")) return;
 
-  var NOTCHES_TO_TRIGGER = 8;
+  var NOTCHES_TO_TRIGGER = 32;
 
   // Most mouse wheels report ~100px per notch. We convert deltaY to "notches".
   // Clamp so trackpads don't count as 50 notches from one gesture.
