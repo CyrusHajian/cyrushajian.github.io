@@ -285,3 +285,18 @@ body.hobbies-page {
     min-height: 0 !important;
   }
 }
+/* =========================================================
+   Hobbies page: push title down slightly under the nav
+   ========================================================= */
+
+body.hobbies-page {
+  /* Add space above the title area */
+  .page__inner-wrap {
+    padding-top: clamp(0.75rem, 2vw, 1.5rem);
+  }
+
+  /* Optional: fine-tune the H1 itself */
+  h1.page__title {
+    margin-top: 0 !important;
+  }
+}
