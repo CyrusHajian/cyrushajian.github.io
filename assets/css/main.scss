@@ -2,34 +2,47 @@
 ---
 @charset "utf-8";
 
+/* =========================================================
+   Minimal Mistakes: skin + base theme
+   ========================================================= */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
 @import "minimal-mistakes";
 
-/* Layout safety */
+/* =========================================================
+   Layout safety
+   ========================================================= */
 html,
 body {
   overflow-x: hidden;
 }
 
-/* Sidebar sizing (desktop) */
+/* =========================================================
+   Sidebar sizing + centering
+   ========================================================= */
 @media (min-width: 1024px) {
   .sidebar {
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* hard-center everything horizontally */
   }
 }
 
-/* Author avatar */
+/* =========================================================
+   Author avatar
+   ========================================================= */
 .sidebar .author__avatar {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1.25rem;
 }
 
 .sidebar .author__avatar img {
-  max-width: 240px; /* avatar size */
+  max-width: 240px;
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
   border-radius: 50%;
   border: 4px solid rgba(255, 255, 255, 0.25);
   object-fit: cover;
@@ -42,14 +55,23 @@ body {
   cursor: default;
 }
 
-/* Author links: disable specific items */
+/* =========================================================
+   Author text + links
+   ========================================================= */
+.sidebar .author__content,
+.sidebar .author__urls-wrapper {
+  width: 100%;
+  text-align: left; /* keep text left-aligned */
+}
+
+/* Disable clicking on specific author links */
 .sidebar .author__urls a.no-click,
 .sidebar .author__urls li.no-click a {
   pointer-events: none;
   cursor: default;
 }
 
-/* Author link icons */
+/* Make author sidebar icons white */
 .sidebar .author__urls i,
 .sidebar .author__urls svg {
   color: #ffffff;
