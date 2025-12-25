@@ -2,131 +2,72 @@
 ---
 @charset "utf-8";
 
-/* Load skin + theme */
+/* =========================================================
+   Minimal Mistakes: skin + base theme
+   ========================================================= */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
 @import "minimal-mistakes";
 
-/* =========================
-   Layout safety
-   ========================= */
-
-html,
-body {
-  overflow-x: hidden;
+/* =========================================================
+   Sidebar width (REQUIRED to allow larger avatar)
+   ========================================================= */
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 360px;
+  }
 }
 
-.sidebar {
-  overflow: hidden; /* prevent any bleed */
+/* =========================================================
+   Author avatar (size, frame, centering)
+   ========================================================= */
+
+/* Avatar container */
+.author__avatar {
+  text-align: center;
+  margin-bottom: 1.25rem;
 }
 
-.sidebar,
-.author__content,
-.author__urls-wrapper {
-  max-width: 100%;
-}
-
-/* =========================
-   Author sidebar: avatar (frame + sizing)
-   ========================= */
-
-.sidebar .author__avatar {
-  float: none !important;               /* override theme float */
-  display: block !important;
-  width: 260px;
-  height: 260px;
-  padding: 12px;                         /* frame thickness */
-  margin: 0 auto 1.25rem auto;           /* center */
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12); /* frame color */
-}
-
-.sidebar .author__avatar img {
-  display: block;
+/* Avatar image — THIS is the size limiter in Minimal Mistakes */
+.author__avatar img {
+  max-width: 280px;                 /* ACTUAL avatar size */
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.25);
-  background: transparent;
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  display: block;
+  margin: 0 auto;
 }
 
-/* Disable clicking on avatar (belt + suspenders) */
-.sidebar .author__avatar a,
-.sidebar .author__avatar a img {
-  pointer-events: none !important;
-  cursor: default !important;
+/* Make avatar non-clickable (even if wrapped later) */
+.author__avatar a,
+.author__avatar a img {
+  pointer-events: none;
+  cursor: default;
 }
 
-/* =========================
-   Author sidebar: links
-   ========================= */
+/* =========================================================
+   Author links
+   ========================================================= */
 
-/* Disable clicking on specific author links */
+/* Disable clicking on specific author links (e.g., SF Bay Area) */
 .author__urls a.no-click,
 .author__urls li.no-click a {
-  pointer-events: none !important;
-  cursor: default !important;
+  pointer-events: none;
+  cursor: default;
 }
 
 /* Make author sidebar icons white */
 .author__urls i,
 .author__urls svg {
-  color: #ffffff !important;
-  fill: #ffffff !important;
+  color: #ffffff;
+  fill: #ffffff;
 }
 
-/* =========================
-   Sidebar hover highlight: exclude avatar
-   ========================= */
+/* =========================================================
+   Layout safety
+   ========================================================= */
 
-/* Remove hover/overlay from the whole author card */
-.sidebar .author__profile:hover,
-.sidebar .author__profile:hover * {
-  background: transparent !important;
-}
-
-/* Re-apply hover highlight only to text + links (not avatar) */
-.sidebar .author__content:hover,
-.sidebar .author__urls-wrapper:hover {
-  background: rgba(255, 255, 255, 0.08) !important;
-}
-
-/* Ensure avatar never gets hover background */
-.sidebar .author__avatar,
-.sidebar .author__avatar * {
-  background: transparent !important;
-}
-
-/* FORCE avatar size in sidebar (wins over theme) */
-.sidebar .author__avatar {
-  width: 320px !important;
-  height: 320px !important;
-  padding: 14px !important;
-}
-
-.sidebar .author__avatar img {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-/* FORCE: avatar size + frame (based on actual DOM) */
-.sidebar.sticky .author__avatar {
-  width: 320px !important;           /* outer frame diameter */
-  height: 320px !important;
-  padding: 14px !important;          /* frame thickness */
-  margin: 0 auto 1.25rem auto !important;
-  border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-  box-sizing: border-box !important;
-}
-
-/* Make the image inset so the frame is visible */
-.sidebar.sticky .author__avatar img {
-  width: calc(320px - 28px) !important;   /* outer - (2 * padding) */
-  height: calc(320px - 28px) !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  border: 3px solid rgba(255, 255, 255, 0.25) !important;
-  display: block !important;
-  margin: 0 auto !important;
+html,
+body {
+  overflow-x: hidden;
 }
