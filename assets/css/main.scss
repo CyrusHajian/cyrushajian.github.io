@@ -96,3 +96,15 @@ body {
 .sidebar .author__avatar * {
   background: transparent !important;
 }
+
+/* FORCE avatar size in sidebar (wins over theme) */
+.sidebar .author__avatar {
+  width: 320px !important;
+  height: 320px !important;
+  padding: 14px !important;
+}
+
+.sidebar .author__avatar img {
+  width: 100% !important;
+  height: 100% !important;
+}
