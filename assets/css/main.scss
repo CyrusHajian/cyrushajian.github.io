@@ -17,30 +17,36 @@ body {
 }
 
 /* =========================================================
-   Sidebar sizing + centering
+   Sidebar sizing
    ========================================================= */
 @media (min-width: 1024px) {
   .sidebar {
     width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* hard-center everything horizontally */
   }
 }
 
 /* =========================================================
-   Author avatar
+   Author avatar — FORCE TRUE CENTER
    ========================================================= */
+
+/* Kill built-in padding that causes right-shift */
+.sidebar {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Avatar wrapper */
 .sidebar .author__avatar {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
   margin-bottom: 1.25rem;
 }
 
+/* Avatar image */
 .sidebar .author__avatar img {
+  width: 240px;
   max-width: 240px;
-  width: 100%;
   height: auto;
   display: block;
   border-radius: 50%;
@@ -48,7 +54,7 @@ body {
   object-fit: cover;
 }
 
-/* Make avatar non-clickable */
+/* Disable avatar click */
 .sidebar .author__avatar a,
 .sidebar .author__avatar a img {
   pointer-events: none;
@@ -60,18 +66,18 @@ body {
    ========================================================= */
 .sidebar .author__content,
 .sidebar .author__urls-wrapper {
-  width: 100%;
-  text-align: left; /* keep text left-aligned */
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
-/* Disable clicking on specific author links */
+/* Disable clicking on specific links */
 .sidebar .author__urls a.no-click,
 .sidebar .author__urls li.no-click a {
   pointer-events: none;
   cursor: default;
 }
 
-/* Make author sidebar icons white */
+/* Make sidebar icons white */
 .sidebar .author__urls i,
 .sidebar .author__urls svg {
   color: #ffffff;
