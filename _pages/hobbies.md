@@ -32,30 +32,29 @@ I love iterating a recipe until it suits the taste of myself, or whomever I'm se
     </p>
   </div>
 
-  <div class="two-col-image bleed-right">
+<div class="two-col-image bleed-right">
   <figure class="swap-stack">
-    <img class="swap-stack__ghost swap-stack__ghost--2"
-         src="{{ '/assets/images/bodegafishing_3.jpg' | relative_url }}"
-         alt=""
-         aria-hidden="true">
-    <img class="swap-stack__ghost"
-         src="{{ '/assets/images/bodegafishing_2.jpg' | relative_url }}"
-         alt=""
-         aria-hidden="true">
-
     <img
       class="js-swap-img swap-stack__main"
       src="{{ '/assets/images/bodegafishing.jpg' | relative_url }}"
-      data-swap="{{ '/assets/images/bodegafishing_2.jpg' | relative_url }}, {{ '/assets/images/bodegafishing_3.jpg' | relative_url }}"
-      data-captions="Foggy pier — first night, Second angle — same spot, Long exposure — lights and rain"
+      data-swap="{{ '/assets/images/bodegafishing_2.png' | relative_url }}"
+      data-captions="a conversation at a small market led to a secret midnight fishing spot, calm water at dusk from the kayak"
       alt="Fishing"
     >
 
+    <img
+      class="swap-stack__ghost"
+      src="{{ '/assets/images/bodegafishing_2.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
+
     <figcaption class="swap-caption">
-      Foggy pier — first night
+      a conversation at a small market led to a secret midnight fishing spot
     </figcaption>
   </figure>
 </div>
+
 
 
 ## Hiking

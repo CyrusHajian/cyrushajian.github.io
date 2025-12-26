@@ -97,3 +97,63 @@
     z-index: 2;
   }
 }
+
+.hobbies-page {
+  .swap-caption {
+    margin-top: 0.75rem;
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+}
+
+/* =========================================================
+   Swap-stack cue (page-scoped and layout-safe)
+   ========================================================= */
+
+.hobbies-page {
+  .swap-stack {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;                 /* prevent figure default margins */
+    padding-bottom: 2.5rem;    /* reserves caption space */
+    isolation: isolate;        /* contains stacking */
+  }
+
+  .swap-stack__main {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .swap-stack__ghost {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 1;
+    transform: scale(0.985);
+  }
+
+  .swap-caption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+}

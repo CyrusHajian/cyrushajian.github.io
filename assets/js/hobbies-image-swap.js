@@ -1,9 +1,9 @@
 // assets/js/hobbies-image-swap.js
 // Click an image to cycle through sources in data-swap.
-// If wrapped in .swap-stack, keeps the "ghost" images updated as a cue.
+// If wrapped in .swap-stack, keeps the "ghost" images and caption updated.
 
 (function () {
-  function parseSwapList(str) {
+  function parseList(str) {
     return (str || "")
       .split(",")
       .map(s => s.trim())
@@ -20,25 +20,39 @@
     if (g2 && upcoming[1]) g2.src = upcoming[1];
   }
 
+  function setCaption(container, captions, idx) {
+    if (!container || captions.length === 0) return;
+
+    const capEl = container.querySelector(".swap-caption");
+    if (!capEl) return;
+
+    // captions correspond to cycle positions: [0]=initial, [1]=first swap, [2]=second swap...
+    capEl.textContent = captions[idx] || captions[0] || "";
+  }
+
   function initSwap(img) {
-    const swaps = parseSwapList(img.getAttribute("data-swap"));
+    const swaps = parseList(img.getAttribute("data-swap"));
     if (swaps.length === 0) return;
 
     const container = img.closest(".swap-stack");
     const initialSrc = img.getAttribute("src");
     const cycle = [initialSrc, ...swaps];
 
+    const captions = parseList(img.getAttribute("data-captions"));
     let idx = 0;
 
-    // Initialize ghosts to the next two images in the cycle
+    // Initialize ghosts and caption
     setGhosts(container, [cycle[(idx + 1) % cycle.length], cycle[(idx + 2) % cycle.length]]);
+    setCaption(container, captions, idx);
+
+    img.style.cursor = "pointer";
 
     img.addEventListener("click", function () {
       idx = (idx + 1) % cycle.length;
       img.setAttribute("src", cycle[idx]);
 
-      // Update ghosts to show what's coming next
       setGhosts(container, [cycle[(idx + 1) % cycle.length], cycle[(idx + 2) % cycle.length]]);
+      setCaption(container, captions, idx);
     });
   }
 
