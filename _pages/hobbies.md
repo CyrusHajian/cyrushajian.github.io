@@ -2,8 +2,11 @@
 title: "Hobbies"
 layout: single
 permalink: /hobbies/
-author_profile: false
-classes: hobbies-page
+author_profile: true
+classes: [hobbies-page, wide]
+page_js:
+  - /assets/js/hobbies-image-swap.js
+
 ---
 My passions outside of science and academia.
 
@@ -30,10 +33,30 @@ I love iterating a recipe until it suits the taste of myself, or whomever I'm se
   </div>
 
   <div class="two-col-image bleed-right">
-    <img src="/assets/images/bodegafishing.jpg" alt="Fishing">
-  </div>
+  <figure class="swap-stack">
+    <img class="swap-stack__ghost swap-stack__ghost--2"
+         src="{{ '/assets/images/bodegafishing_3.jpg' | relative_url }}"
+         alt=""
+         aria-hidden="true">
+    <img class="swap-stack__ghost"
+         src="{{ '/assets/images/bodegafishing_2.jpg' | relative_url }}"
+         alt=""
+         aria-hidden="true">
 
+    <img
+      class="js-swap-img swap-stack__main"
+      src="{{ '/assets/images/bodegafishing.jpg' | relative_url }}"
+      data-swap="{{ '/assets/images/bodegafishing_2.jpg' | relative_url }}, {{ '/assets/images/bodegafishing_3.jpg' | relative_url }}"
+      data-captions="Foggy pier — first night, Second angle — same spot, Long exposure — lights and rain"
+      alt="Fishing"
+    >
+
+    <figcaption class="swap-caption">
+      Foggy pier — first night
+    </figcaption>
+  </figure>
 </div>
+
 
 ## Hiking
 
@@ -54,4 +77,4 @@ I love iterating a recipe until it suits the taste of myself, or whomever I'm se
 </div>
 
 ## Photography
-I'm not much of a photographer, but there are some things I see with my eyes that I would like to look at later. Check out some of my photos in /adventures/.
+I'm not much of a photographer, but there are some things I see with my eyes that I would like to look at later. Check out some of my photos in [Adventures](/adventures/).

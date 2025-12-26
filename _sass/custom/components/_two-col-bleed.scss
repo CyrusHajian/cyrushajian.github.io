@@ -1,0 +1,42 @@
+/* =========================================================
+   Two-column text + image (responsive)
+   Goal: big image column that can “bleed” visually without
+         rewriting the theme’s main layout widths
+   ========================================================= */
+
+.two-col-bleed {
+  display: grid;
+  grid-template-columns: 1fr clamp(260px, 34vw, 640px);
+  gap: clamp(1rem, 2.5vw, 2.25rem);
+  align-items: start;
+}
+
+/* keep text sensible */
+.two-col-text {
+  min-width: 0;
+}
+
+/*
+  “Bleed-right” behavior:
+  - allow the image to sit flush/right
+  - optionally allow slight overflow without triggering horizontal scroll
+*/
+.bleed-right {
+  justify-self: end;
+  width: 100%;
+  max-width: 100%;
+}
+
+.bleed-right img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Mobile stacks */
+@media (max-width: 768px) {
+  .two-col-bleed {
+    grid-template-columns: 1fr;
+  }
+}

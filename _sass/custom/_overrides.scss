@@ -1,0 +1,78 @@
+/* =========================================================
+   Layout safety
+   ========================================================= */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   Author avatar — EXACT original portrait behavior
+   ========================================================= */
+.sidebar .author__avatar {
+  display: flex;
+  justify-content: center;
+  margin: 0.75rem 0 1rem 0;
+}
+
+.sidebar .author__avatar img {
+  max-width: 260px;
+  width: 100%;
+  height: 300px;
+  display: block;
+  margin: 0 20px 0 0; /* keep this: it affects the look */
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Disable avatar click */
+.sidebar .author__avatar a,
+.sidebar .author__avatar a img {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* =========================================================
+   Author links
+   ========================================================= */
+.sidebar .author__urls a.no-click,
+.sidebar .author__urls li.no-click a {
+  pointer-events: none;
+  cursor: default;
+}
+
+.sidebar .author__urls i,
+.sidebar .author__urls svg {
+  color: #ffffff;
+  fill: #ffffff;
+}
+
+/* =========================================================
+   Sidebar hover behavior — EXACT original
+   ========================================================= */
+@media (min-width: 80em) {
+  .sidebar,
+  .sidebar:hover {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  .sidebar .author__content,
+  .sidebar .author__urls-wrapper {
+    opacity: 0.75;
+    transition: opacity 0.25s ease;
+  }
+
+  .sidebar:hover .author__content,
+  .sidebar:hover .author__urls-wrapper {
+    opacity: 1;
+  }
+
+  .sidebar .author__avatar,
+  .sidebar .author__avatar * {
+    opacity: 1 !important;
+    transition: none !important;
+    filter: none !important;
+  }
+}

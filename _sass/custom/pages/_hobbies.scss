@@ -1,0 +1,99 @@
+/* =========================================================
+   Hobbies page layout (page-scoped)
+   ========================================================= */
+
+.hobbies-page {
+  .hobbies-layout {
+    display: grid;
+    grid-template-columns: 1fr clamp(220px, 28vw, 520px);
+    gap: clamp(1rem, 2.5vw, 2.25rem);
+    align-items: start;
+  }
+
+  .hobbies-images img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    display: block;
+  }
+
+  /* Mobile */
+  @media (max-width: 64em) {
+    .hobbies-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .hobbies-images {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+    }
+
+    .hobbies-images img {
+      width: 240px;
+      flex-shrink: 0;
+    }
+  }
+
+  /* =========================================================
+     Fullscreen tuning
+     Goal:
+     - Slightly wider text column
+     - Enough width for:
+       "Fishing has always been one of my favorite ways to"
+       to sit on one line
+     ========================================================= */
+  @media (min-width: 80em) {
+
+    /* Let the main content expand */
+    #main {
+      max-width: none !important;
+    }
+
+    .page__inner-wrap {
+      max-width: 1600px !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+    }
+
+    /* Spread the two-column layout */
+    .two-col-bleed {
+      grid-template-columns: minmax(360px, 1fr) minmax(720px, 1.35fr);
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    /* THIS is the critical line for text width */
+    .two-col-text {
+      max-width: 62ch;
+    }
+  }
+}
+
+/* =========================================================
+   Click-to-swap cue: stacked photo look
+   ========================================================= */
+
+   .hobbies-page {
+  .two-col-image {
+    position: relative;
+    z-index: 0; /* keeps each block self-contained */
+  }
+
+  .swap-stack {
+    position: relative;
+    z-index: 0;
+    isolation: isolate; /* prevents blending/stacking bleed into other sections */
+    padding-bottom: 2.25rem; /* reserves space so ghosts never overlap next section */
+  }
+
+  .swap-stack__ghost {
+    z-index: 0;
+  }
+
+  .swap-stack__main {
+    position: relative;
+    z-index: 2;
+  }
+}
