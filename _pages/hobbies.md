@@ -70,9 +70,7 @@ I love iterating a recipe until it suits the taste of myself, or whomever I'm se
   </div>
 
   <div class="two-col-image bleed-right">
-    <figure>
-      <img src="{{ '/assets/images/mountain.jpg' | relative_url }}" alt="Hiking">
-    </figure>
+    <img src="/assets/images/mountain.jpg" alt="Hiking">
   </div>
 
 </div>
