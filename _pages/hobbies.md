@@ -69,9 +69,19 @@ I love iterating a recipe until it suits the taste of myself, or whomever I'm se
     </p>
   </div>
 
-  <div class="two-col-image bleed-right">
-    <img src="/assets/images/mountain.jpg" alt="Hiking">
-  </div>
+<div class="two-col-image bleed-right">
+  <figure class="swap-stack">
+    <img
+      class="js-swap-img swap-stack__main"
+      src="{{ '/assets/images/mountain.jpg' | relative_url }}"
+      alt="Hiking"
+    >
+
+    <figcaption class="swap-caption">
+      Exploring the natural beauty of the Pacific Northwest
+    </figcaption>
+  </figure>
+</div>
 
 </div>
 
