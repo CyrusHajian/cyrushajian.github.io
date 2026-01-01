@@ -130,6 +130,7 @@
     position: relative;
     z-index: 2;
     cursor: pointer;
+    object-fit: contain;
   }
 
   .swap-stack__ghost {

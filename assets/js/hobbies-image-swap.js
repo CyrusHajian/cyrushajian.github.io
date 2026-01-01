@@ -47,6 +47,22 @@
 
     img.style.cursor = "pointer";
 
+    // Lock aspect ratio to prevent layout shifts when images swap
+    function lockAspectRatio() {
+      if (img.naturalWidth && img.naturalHeight) {
+        const aspectRatio = img.naturalWidth / img.naturalHeight;
+        img.style.aspectRatio = `${aspectRatio}`;
+        img.style.objectFit = "contain";
+      }
+    }
+
+    // Set aspect ratio when image loads (handles both already-loaded and loading images)
+    if (img.complete && img.naturalWidth) {
+      lockAspectRatio();
+    } else {
+      img.addEventListener("load", lockAspectRatio, { once: true });
+    }
+
     img.addEventListener("click", function () {
       idx = (idx + 1) % cycle.length;
       img.setAttribute("src", cycle[idx]);
