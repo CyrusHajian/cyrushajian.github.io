@@ -131,12 +131,13 @@
     align-items: center;
     justify-content: center;
     padding-bottom: 0;         /* Remove padding, caption will be outside */
+    position: relative;
+    z-index: 2;                /* Above ghost images */
     /* Aspect ratio will be set via JavaScript inline style */
   }
 
-  /* Remove border-radius from images when inside black background container */
-  .swap-stack.has-swap-images .swap-stack__main,
-  .swap-stack.has-swap-images .swap-stack__ghost {
+  /* Remove border-radius from main image when inside black background container */
+  .swap-stack.has-swap-images .swap-stack__main {
     border-radius: 0;
   }
 
@@ -161,18 +162,9 @@
   }
 
   .swap-stack__ghost {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    width: 100%;
-    height: auto;
+    /* Ghost images are now positioned outside container via JavaScript */
+    /* Base styles - will be overridden by JavaScript inline styles */
     display: block;
-    border-radius: 12px;
-    opacity: 0.22;
-    pointer-events: none;
-    z-index: 1;
-    transform: scale(0.985);
-    object-fit: contain;
   }
 
   .swap-caption {
@@ -186,10 +178,11 @@
     line-height: 1.35;
   }
 
-  /* Position caption below black background container */
+  /* Position caption and ghost images relative to parent container */
   .two-col-image.has-swap-container {
     position: relative;
     padding-bottom: 2.5rem;    /* Reserve space for caption */
+    z-index: 0;
   }
 
   .two-col-image.has-swap-container .swap-caption {
