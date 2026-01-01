@@ -53,6 +53,15 @@
         const aspectRatio = img.naturalWidth / img.naturalHeight;
         img.style.aspectRatio = `${aspectRatio}`;
         img.style.objectFit = "contain";
+        
+        // Apply same aspect ratio to ghost images for consistent sizing
+        if (container) {
+          const ghosts = container.querySelectorAll(".swap-stack__ghost");
+          ghosts.forEach(ghost => {
+            ghost.style.aspectRatio = `${aspectRatio}`;
+            ghost.style.objectFit = "contain";
+          });
+        }
       }
     }
 
