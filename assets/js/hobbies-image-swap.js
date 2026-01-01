@@ -88,20 +88,30 @@
       // Apply aspect ratio and styling to container
       if (container) {
         container.classList.add("has-swap-images");
-        // Note: aspect-ratio on container will determine the image area height
-        // The padding-bottom for caption is separate and adds space below
         container.style.aspectRatio = `${aspectRatio}`;
         
-        // Apply sizing to main image
+        // Move caption outside container if not already moved
+        const caption = container.querySelector(".swap-caption");
+        const parentContainer = container.closest(".two-col-image");
+        if (caption && parentContainer && caption.parentElement === container) {
+          container.removeChild(caption);
+          parentContainer.appendChild(caption);
+          parentContainer.classList.add("has-swap-container");
+        }
+        
+        // Apply sizing to main image for centering
         img.style.width = "100%";
+        img.style.maxHeight = "100%";
         img.style.height = "auto";
         img.style.objectFit = "contain";
+        img.style.objectPosition = "center";
         img.style.display = "block";
         
-        // Apply same aspect ratio hint to ghost images for consistent sizing
+        // Apply same to ghost images for consistent sizing
         const ghosts = container.querySelectorAll(".swap-stack__ghost");
         ghosts.forEach(ghost => {
           ghost.style.objectFit = "contain";
+          ghost.style.objectPosition = "center";
         });
       }
     }
