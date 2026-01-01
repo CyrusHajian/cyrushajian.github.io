@@ -122,6 +122,20 @@
     isolation: isolate;        /* contains stacking */
   }
 
+  /* Black background for image containers */
+  .swap-stack.has-swap-images {
+    background-color: #000000;
+    border-radius: 12px;
+    overflow: hidden;          /* ensures rounded corners clip content */
+    /* Aspect ratio will be set via JavaScript inline style */
+  }
+
+  /* Remove border-radius from images when inside black background container */
+  .swap-stack.has-swap-images .swap-stack__main,
+  .swap-stack.has-swap-images .swap-stack__ghost {
+    border-radius: 0;
+  }
+
   .swap-stack__main {
     width: 100%;
     height: auto;

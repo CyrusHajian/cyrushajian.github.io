@@ -47,30 +47,67 @@
 
     img.style.cursor = "pointer";
 
-    // Lock aspect ratio to prevent layout shifts when images swap
-    function lockAspectRatio() {
-      if (img.naturalWidth && img.naturalHeight) {
-        const aspectRatio = img.naturalWidth / img.naturalHeight;
-        img.style.aspectRatio = `${aspectRatio}`;
-        img.style.objectFit = "contain";
+    // Find the largest image in the set to determine the fixed aspect ratio
+    function findLargestImageAspectRatio(callback) {
+      const imagePromises = cycle.map(src => {
+        return new Promise((resolve) => {
+          const testImg = new Image();
+          testImg.onload = function() {
+            resolve({
+              src: src,
+              width: this.naturalWidth,
+              height: this.naturalHeight,
+              area: this.naturalWidth * this.naturalHeight,
+              aspectRatio: this.naturalWidth / this.naturalHeight
+            });
+          };
+          testImg.onerror = function() {
+            resolve(null);
+          };
+          testImg.src = src;
+        });
+      });
+
+      Promise.all(imagePromises).then(results => {
+        const validResults = results.filter(r => r !== null);
+        if (validResults.length === 0) return;
+
+        // Find the image with the largest area
+        const largest = validResults.reduce((max, current) => 
+          current.area > max.area ? current : max
+        );
+
+        callback(largest.aspectRatio);
+      });
+    }
+
+    // Lock aspect ratio based on the largest image
+    function lockAspectRatio(aspectRatio) {
+      if (!aspectRatio) return;
+
+      // Apply aspect ratio and styling to container
+      if (container) {
+        container.classList.add("has-swap-images");
+        // Note: aspect-ratio on container will determine the image area height
+        // The padding-bottom for caption is separate and adds space below
+        container.style.aspectRatio = `${aspectRatio}`;
         
-        // Apply same aspect ratio to ghost images for consistent sizing
-        if (container) {
-          const ghosts = container.querySelectorAll(".swap-stack__ghost");
-          ghosts.forEach(ghost => {
-            ghost.style.aspectRatio = `${aspectRatio}`;
-            ghost.style.objectFit = "contain";
-          });
-        }
+        // Apply sizing to main image
+        img.style.width = "100%";
+        img.style.height = "auto";
+        img.style.objectFit = "contain";
+        img.style.display = "block";
+        
+        // Apply same aspect ratio hint to ghost images for consistent sizing
+        const ghosts = container.querySelectorAll(".swap-stack__ghost");
+        ghosts.forEach(ghost => {
+          ghost.style.objectFit = "contain";
+        });
       }
     }
 
-    // Set aspect ratio when image loads (handles both already-loaded and loading images)
-    if (img.complete && img.naturalWidth) {
-      lockAspectRatio();
-    } else {
-      img.addEventListener("load", lockAspectRatio, { once: true });
-    }
+    // Find largest image and lock aspect ratio
+    findLargestImageAspectRatio(lockAspectRatio);
 
     img.addEventListener("click", function () {
       idx = (idx + 1) % cycle.length;
