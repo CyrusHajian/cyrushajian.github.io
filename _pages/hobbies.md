@@ -55,7 +55,7 @@ I love iterating a recipe until it suits the taste of myself, or whomever I'm se
   </figure>
 </div>
 
-
+</div>
 
 ## Hiking
 
