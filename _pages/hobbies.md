@@ -3,7 +3,7 @@ title: "Hobbies"
 layout: single
 permalink: /hobbies/
 author_profile: true
-classes: [hobbies-page, wide]
+classes: [wide]
 page_js:
   - /assets/js/hobbies-image-swap.js
 
