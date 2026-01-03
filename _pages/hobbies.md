@@ -16,11 +16,45 @@ Although, science has a beautiful way of bleeding into everything.
 I'm a curious person, and find joy in putting effort into learning or understanding the world. I enjoy approaching ideas from various angles, and discussing/building ideas and concepts with others. 
 
 ## Cooking
-I have been cooking since I was very young, and it has become one of my most rewarding hobbies. Cooking has taught me to be methodical and patient, and to learn effectively from mistakes through iteration and practice. It has also given me a deep appreciation for other cultures and the ways food reflects history, tradition, and community.
 
-I enjoy experimenting with ingredients, learning new recipes, and teaching others what I learn along the way. I regularly cook for  family and friends and am comfortable preparing a wide range of dishes across many cuisines, including Japanese, Italian, Mediterranean, Filipino, Chinese, Caribbean, Mexican, and Caribbean, among many more. 
+<div class="two-col-bleed">
 
-I love iterating a recipe until it suits the taste of myself, or whomever I'm serving it to. 
+  <div class="two-col-text">
+    <p>
+      I have been cooking since I was very young, and it has become one of my most rewarding hobbies. Cooking has taught me to be methodical and patient, and to learn effectively from mistakes through iteration and practice. It has also given me a deep appreciation for other cultures and the ways food reflects history, tradition, and community.
+    </p>
+    <p>
+      I enjoy experimenting with ingredients, learning new recipes, and teaching others what I learn along the way. I regularly cook for  family and friends and am comfortable preparing a wide range of dishes across many cuisines, including Japanese, Italian, Mediterranean, Filipino, Chinese, Caribbean, Mexican, and Caribbean, among many more. 
+    </p>
+    <p>
+      I love iterating a recipe until it suits the taste of myself, or whomever I'm serving it to.
+    </p>
+  </div>
+
+<div class="two-col-image bleed-right">
+  <figure class="swap-stack">
+    <img
+      class="js-swap-img swap-stack__main"
+      src="{{ '/assets/images/cooking-placeholder-1.jpg' | relative_url }}"
+      data-swap="{{ '/assets/images/cooking-placeholder-2.jpg' | relative_url }}, {{ '/assets/images/cooking-placeholder-3.jpg' | relative_url }}"
+      data-captions="Cooking and experimenting with flavors, Preparing diverse cuisines, Sharing meals with family and friends"
+      alt="Cooking"
+    >
+
+    <img
+      class="swap-stack__ghost"
+      src="{{ '/assets/images/cooking-placeholder-2.jpg' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
+
+    <figcaption class="swap-caption">
+      Cooking and experimenting with flavors
+    </figcaption>
+  </figure>
+</div>
+
+</div> 
 
 ## Fishing
 
@@ -55,7 +89,7 @@ I love iterating a recipe until it suits the taste of myself, or whomever I'm se
   </figure>
 </div>
 
-
+</div>
 
 ## Hiking
 
@@ -69,9 +103,28 @@ I love iterating a recipe until it suits the taste of myself, or whomever I'm se
     </p>
   </div>
 
-  <div class="two-col-image bleed-right">
-    <img src="/assets/images/mountain.jpg" alt="Hiking">
-  </div>
+<div class="two-col-image bleed-right">
+  <figure class="swap-stack">
+    <img
+      class="js-swap-img swap-stack__main"
+      src="{{ '/assets/images/mountain.jpg' | relative_url }}"
+      data-swap="{{ '/assets/images/hiking-placeholder-1.jpg' | relative_url }}, {{ '/assets/images/hiking-placeholder-2.jpg' | relative_url }}"
+      data-captions="Exploring the natural beauty of the Pacific Northwest, Hiking in the Pacific Northwest, Nature exploration"
+      alt="Hiking"
+    >
+
+    <img
+      class="swap-stack__ghost"
+      src="{{ '/assets/images/hiking-placeholder-1.jpg' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
+
+    <figcaption class="swap-caption">
+      Exploring the natural beauty of the Pacific Northwest
+    </figcaption>
+  </figure>
+</div>
 
 </div>
 

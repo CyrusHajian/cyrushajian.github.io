@@ -122,6 +122,25 @@
     isolation: isolate;        /* contains stacking */
   }
 
+  /* Black background for image containers */
+  .swap-stack.has-swap-images {
+    background-color: #000000;
+    border-radius: 12px;
+    overflow: hidden;          /* ensures rounded corners clip content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;         /* Remove padding, caption will be outside */
+    position: relative;
+    z-index: 2;                /* Above ghost images */
+    /* Aspect ratio will be set via JavaScript inline style */
+  }
+
+  /* Remove border-radius from main image when inside black background container */
+  .swap-stack.has-swap-images .swap-stack__main {
+    border-radius: 0;
+  }
+
   .swap-stack__main {
     width: 100%;
     height: auto;
@@ -130,20 +149,22 @@
     position: relative;
     z-index: 2;
     cursor: pointer;
+    object-fit: contain;
+  }
+
+  /* Center images vertically when inside black background */
+  .swap-stack.has-swap-images .swap-stack__main {
+    width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
   }
 
   .swap-stack__ghost {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    width: 100%;
-    height: auto;
+    /* Ghost images are now positioned outside container via JavaScript */
+    /* Base styles - will be overridden by JavaScript inline styles */
     display: block;
-    border-radius: 12px;
-    opacity: 0.22;
-    pointer-events: none;
-    z-index: 1;
-    transform: scale(0.985);
   }
 
   .swap-caption {
@@ -151,6 +172,24 @@
     left: 0;
     bottom: 0;
     margin: 0;
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
+  /* Position caption and ghost images relative to parent container */
+  .two-col-image.has-swap-container {
+    position: relative;
+    padding-bottom: 2.5rem;    /* Reserve space for caption */
+    z-index: 0;
+  }
+
+  .two-col-image.has-swap-container .swap-caption {
+    position: absolute;
+    left: 0;
+    bottom: -0.75rem;
+    margin-top: 0.75rem;
     font-style: italic;
     opacity: 0.8;
     font-size: 0.95rem;
