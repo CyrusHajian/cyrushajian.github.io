@@ -1,0 +1,67 @@
+/* =========================================================
+   Research page (page-scoped)
+   ========================================================= */
+
+.research-page {
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .research-card {
+    min-height: 160px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+    color: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .research-card:hover,
+  .research-card:focus {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    outline: none;
+  }
+
+  .research-detail {
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .research-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    color: inherit;
+    border: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-bottom: 0.75rem;
+    opacity: 0.8;
+  }
+
+  .research-back:hover,
+  .research-back:focus {
+    opacity: 1;
+    outline: none;
+  }
+
+  @media (max-width: 48em) {
+    .research-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
