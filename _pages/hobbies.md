@@ -3,7 +3,7 @@ title: "Hobbies"
 layout: single
 permalink: /hobbies/
 author_profile: true
-classes: [wide]
+classes: [hobbies-page, wide]
 page_js:
   - /assets/js/hobbies-image-swap.js
 
@@ -15,13 +15,13 @@ Although, science has a beautiful way of bleeding into everything.
 ## Learning
 I'm a curious person, and find joy in putting effort into learning or understanding the world. I enjoy approaching ideas from various angles, and discussing/building ideas and concepts with others. 
 
-## Cooking
+## Cookings
 
 <div class="two-col-bleed">
 
   <div class="two-col-text">
     <p>
-      I have been cooking since I was very young, and it has become one of my most rewarding hobbies. Cooking has taught me to be methodical and patient, and to learn effectively from mistakes through iteration and practice. It has also given me a deep appreciation for other cultures and the ways food reflects history, tradition, and community.
+      I have been cooking since I was very young, and it has become one of my most rewarding hobbies. Cookings has taught me to be methodical and patient, and to learn effectively from mistakes through iteration and practice. It has also given me a deep appreciation for other cultures and the ways food reflects history, tradition, and community.
     </p>
     <p>
       I enjoy experimenting with ingredients, learning new recipes, and teaching others what I learn along the way. I regularly cook for  family and friends and am comfortable preparing a wide range of dishes across many cuisines, including Japanese, Italian, Mediterranean, Filipino, Chinese, Caribbean, Mexican, and Caribbean, among many more. 
@@ -37,8 +37,8 @@ I'm a curious person, and find joy in putting effort into learning or understand
       class="js-swap-img swap-stack__main"
       src="{{ '/assets/images/cooking-placeholder-1.jpg' | relative_url }}"
       data-swap="{{ '/assets/images/cooking-placeholder-2.jpg' | relative_url }}, {{ '/assets/images/cooking-placeholder-3.jpg' | relative_url }}"
-      data-captions="Cooking and experimenting with flavors, Preparing diverse cuisines, Sharing meals with family and friends"
-      alt="Cooking"
+      data-captions="Cookings and experimenting with flavors, Preparing diverse cuisines, Sharing meals with family and friends"
+      alt="Cookings"
     >
 
     <img
@@ -49,7 +49,7 @@ I'm a curious person, and find joy in putting effort into learning or understand
     >
 
     <figcaption class="swap-caption">
-      Cooking and experimenting with flavors
+      Cookings and experimenting with flavors
     </figcaption>
   </figure>
 </div>
