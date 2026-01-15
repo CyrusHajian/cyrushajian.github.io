@@ -52,20 +52,13 @@ body {
    Sidebar hover behavior — EXACT original
    ========================================================= */
 @media (min-width: 80em) {
-  .sidebar,
-  .sidebar:hover {
+  .sidebar {
     opacity: 1 !important;
     transition: none !important;
   }
 
   .sidebar .author__content,
   .sidebar .author__urls-wrapper {
-    opacity: 0.75;
-    transition: opacity 0.25s ease;
-  }
-
-  .sidebar:hover .author__content,
-  .sidebar:hover .author__urls-wrapper {
     opacity: 1;
   }
 
@@ -75,4 +68,9 @@ body {
     transition: none !important;
     filter: none !important;
   }
+}
+
+.sidebar .author__urls a:hover .label,
+.sidebar .author__urls a:focus .label {
+  text-decoration: underline;
 }
