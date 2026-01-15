@@ -3,6 +3,109 @@
    ========================================================= */
 
 .hobbies-page {
+  .hobbies-interactive {
+    margin-top: 1.5rem;
+  }
+
+  .hobbies-map {
+    position: relative;
+    max-width: 100%;
+  }
+
+  .hobbies-map.is-hidden {
+    display: none;
+  }
+
+  .hobbies-map img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+
+  .hobbies-hotspot {
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.08);
+    color: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .hobbies-hotspot:hover,
+  .hobbies-hotspot:focus {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.18);
+    outline: none;
+  }
+
+  .hobbies-hotspot.hs-learning {
+    top: 8%;
+    left: 8%;
+    width: 38%;
+    height: 32%;
+  }
+
+  .hobbies-hotspot.hs-cooking {
+    top: 8%;
+    right: 8%;
+    width: 38%;
+    height: 32%;
+  }
+
+  .hobbies-hotspot.hs-fishing {
+    bottom: 8%;
+    left: 8%;
+    width: 38%;
+    height: 32%;
+  }
+
+  .hobbies-hotspot.hs-hiking {
+    bottom: 8%;
+    right: 8%;
+    width: 38%;
+    height: 32%;
+  }
+
+  .hobby-detail {
+    display: none;
+    margin-top: 1.5rem;
+  }
+
+  .hobby-detail.is-active {
+    display: block;
+  }
+
+  .hobby-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    color: inherit;
+    border: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-bottom: 0.75rem;
+    opacity: 0.8;
+  }
+
+  .hobby-back:hover,
+  .hobby-back:focus {
+    opacity: 1;
+    outline: none;
+  }
+
+  @media (max-width: 48em) {
+    .hobbies-hotspot {
+      font-size: 0.85rem;
+    }
+  }
   .hobbies-layout {
     display: grid;
     grid-template-columns: 1fr clamp(220px, 28vw, 520px);
