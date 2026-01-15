@@ -6,6 +6,7 @@ author_profile: true
 classes: [hobbies-page, wide]
 page_js:
   - /assets/js/hobbies-image-swap.js
+  - /assets/js/hobbies-sections.js
 
 ---
 My passions outside of science and academia.
