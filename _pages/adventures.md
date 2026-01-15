@@ -5,10 +5,7 @@ permalink: /adventures/
 author_profile: true
 page_js:
   - /assets/js/research-sections.js
-<<<<<<< HEAD
-=======
   - /assets/js/adventures-carousel.js
->>>>>>> 8dcaab3 (Add adventure image carousels)
 ---
 
 ## Adventures
@@ -34,9 +31,6 @@ page_js:
       ← Back
     </button>
     <h3>Adventure One</h3>
-<<<<<<< HEAD
-    <p>Details for this adventure will go here.</p>
-=======
     <div class="adventures-carousel" data-carousel data-images="{{ '/assets/images/adventures/placeholder-01.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-02.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-03.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-04.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-05.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-06.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-07.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-08.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-09.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-10.svg' | relative_url }}">
       <button class="adventures-carousel__button" type="button" data-carousel-prev aria-label="Previous image">
         ←
@@ -48,7 +42,6 @@ page_js:
         →
       </button>
     </div>
->>>>>>> 8dcaab3 (Add adventure image carousels)
   </section>
 
   <section class="research-detail" id="adventure-2" hidden>
@@ -56,9 +49,6 @@ page_js:
       ← Back
     </button>
     <h3>Adventure Two</h3>
-<<<<<<< HEAD
-    <p>Details for this adventure will go here.</p>
-=======
     <div class="adventures-carousel" data-carousel data-images="{{ '/assets/images/adventures/placeholder-01.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-02.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-03.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-04.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-05.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-06.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-07.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-08.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-09.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-10.svg' | relative_url }}">
       <button class="adventures-carousel__button" type="button" data-carousel-prev aria-label="Previous image">
         ←
@@ -70,7 +60,6 @@ page_js:
         →
       </button>
     </div>
->>>>>>> 8dcaab3 (Add adventure image carousels)
   </section>
 
   <section class="research-detail" id="adventure-3" hidden>
@@ -78,9 +67,6 @@ page_js:
       ← Back
     </button>
     <h3>Adventure Three</h3>
-<<<<<<< HEAD
-    <p>Details for this adventure will go here.</p>
-=======
     <div class="adventures-carousel" data-carousel data-images="{{ '/assets/images/adventures/placeholder-01.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-02.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-03.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-04.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-05.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-06.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-07.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-08.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-09.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-10.svg' | relative_url }}">
       <button class="adventures-carousel__button" type="button" data-carousel-prev aria-label="Previous image">
         ←
@@ -92,7 +78,6 @@ page_js:
         →
       </button>
     </div>
->>>>>>> 8dcaab3 (Add adventure image carousels)
   </section>
 
   <section class="research-detail" id="adventure-4" hidden>
@@ -100,9 +85,6 @@ page_js:
       ← Back
     </button>
     <h3>Adventure Four</h3>
-<<<<<<< HEAD
-    <p>Details for this adventure will go here.</p>
-=======
     <div class="adventures-carousel" data-carousel data-images="{{ '/assets/images/adventures/placeholder-01.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-02.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-03.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-04.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-05.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-06.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-07.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-08.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-09.svg' | relative_url }}, {{ '/assets/images/adventures/placeholder-10.svg' | relative_url }}">
       <button class="adventures-carousel__button" type="button" data-carousel-prev aria-label="Previous image">
         ←
@@ -114,6 +96,5 @@ page_js:
         →
       </button>
     </div>
->>>>>>> 8dcaab3 (Add adventure image carousels)
   </section>
 </div>
