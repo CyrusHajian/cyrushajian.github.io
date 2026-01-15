@@ -49,7 +49,7 @@ body {
 }
 
 /* =========================================================
-   Sidebar hover behavior — EXACT original
+   Sidebar hover behavior — per-item emphasis
    ========================================================= */
 @media (min-width: 80em) {
   .sidebar {
@@ -70,6 +70,28 @@ body {
   }
 }
 
+<<<<<<< HEAD
+=======
+.sidebar .author__bio {
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar .author__bio:hover {
+  opacity: 1;
+}
+
+.sidebar .author__urls li {
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar .author__urls li:hover,
+.sidebar .author__urls li:focus-within {
+  opacity: 1;
+}
+
+>>>>>>> 5a631a1 (Refine sidebar hover to per-item highlights)
 .sidebar .author__urls a:hover .label,
 .sidebar .author__urls a:focus .label {
   text-decoration: underline;
