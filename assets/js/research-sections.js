@@ -4,15 +4,19 @@
   function showDetail(grid, detail) {
     if (!grid || !detail) return;
     grid.hidden = true;
+    grid.classList.add("is-hidden");
     detail.hidden = false;
+    detail.classList.add("is-active");
   }
 
   function showGrid(grid, details) {
     if (!grid) return;
     details.forEach(section => {
       section.hidden = true;
+      section.classList.remove("is-active");
     });
     grid.hidden = false;
+    grid.classList.remove("is-hidden");
   }
 
   document.addEventListener("DOMContentLoaded", function () {
