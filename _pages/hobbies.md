@@ -8,6 +8,7 @@ page_js:
   - /assets/js/hobbies-sections.js
 
 ---
+<div class="hobbies-page">
 My passions outside of science and academia.
 
 Although, science has a beautiful way of bleeding into everything.
@@ -149,4 +150,6 @@ Although, science has a beautiful way of bleeding into everything.
       </div>
     </div>
   </section>
+</div>
+
 </div>
