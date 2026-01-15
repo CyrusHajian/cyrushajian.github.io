@@ -10,8 +10,6 @@
   .hobbies-map {
     position: relative;
     max-width: 100%;
-    width: 100%;
-    margin: 0 auto;
   }
 
   .hobbies-map.is-hidden {
@@ -23,8 +21,6 @@
     height: auto;
     display: block;
     border-radius: 12px;
-    min-height: 620px;
-    object-fit: cover;
   }
 
   .hobbies-hotspot {
@@ -33,9 +29,9 @@
     background: rgba(255, 255, 255, 0.08);
     color: inherit;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 0.95rem;
     text-align: left;
-    padding: 1.15rem 1.7rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
@@ -51,31 +47,31 @@
   }
 
   .hobbies-hotspot.hs-learning {
-    top: 5%;
-    left: 5%;
-    width: 42%;
-    height: 34%;
+    top: 8%;
+    left: 8%;
+    width: 38%;
+    height: 32%;
   }
 
   .hobbies-hotspot.hs-cooking {
-    top: 5%;
-    right: 5%;
-    width: 42%;
-    height: 34%;
+    top: 8%;
+    right: 8%;
+    width: 38%;
+    height: 32%;
   }
 
   .hobbies-hotspot.hs-fishing {
-    bottom: 5%;
-    left: 5%;
-    width: 42%;
-    height: 34%;
+    bottom: 8%;
+    left: 8%;
+    width: 38%;
+    height: 32%;
   }
 
   .hobbies-hotspot.hs-hiking {
-    bottom: 5%;
-    right: 5%;
-    width: 42%;
-    height: 34%;
+    bottom: 8%;
+    right: 8%;
+    width: 38%;
+    height: 32%;
   }
 
   .hobby-detail {
@@ -108,12 +104,7 @@
 
   @media (max-width: 48em) {
     .hobbies-hotspot {
-      font-size: 1.2rem;
-      padding: 0.95rem 1.2rem;
-    }
-
-    .hobbies-map img {
-      min-height: 440px;
+      font-size: 0.85rem;
     }
   }
   .hobbies-layout {
