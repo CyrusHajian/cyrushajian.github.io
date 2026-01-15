@@ -15,22 +15,18 @@ Although, science has a beautiful way of bleeding into everything.
 
 ## Hobbies
 
-<div class="hobbies-interactive">
-  <div class="hobbies-map" data-hobbies-map>
-    <img
-      src="{{ '/assets/images/hobbies-map-placeholder.svg' | relative_url }}"
-      alt="Hobbies overview map placeholder"
-    >
-    <button class="hobbies-hotspot hs-learning" type="button" data-hobbies-target="hobby-learning">
+<div class="hobbies-interactive research-page">
+  <div class="research-grid" data-hobbies-grid>
+    <button class="research-card" type="button" data-hobbies-target="hobby-learning">
       Learning
     </button>
-    <button class="hobbies-hotspot hs-cooking" type="button" data-hobbies-target="hobby-cooking">
+    <button class="research-card" type="button" data-hobbies-target="hobby-cooking">
       Cooking
     </button>
-    <button class="hobbies-hotspot hs-fishing" type="button" data-hobbies-target="hobby-fishing">
+    <button class="research-card" type="button" data-hobbies-target="hobby-fishing">
       Fishing
     </button>
-    <button class="hobbies-hotspot hs-hiking" type="button" data-hobbies-target="hobby-hiking">
+    <button class="research-card" type="button" data-hobbies-target="hobby-hiking">
       Hiking
     </button>
   </div>

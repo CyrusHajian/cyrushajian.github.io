@@ -20,12 +20,12 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    const map = document.querySelector("[data-hobbies-map]");
+    const grid = document.querySelector("[data-hobbies-grid]");
     const details = Array.from(document.querySelectorAll(".hobby-detail"));
 
-    if (!map || details.length === 0) return;
+    if (!grid || details.length === 0) return;
 
-    map.addEventListener("click", function (event) {
+    grid.addEventListener("click", function (event) {
       const button = event.target.closest("[data-hobbies-target]");
       if (!button) return;
 
@@ -33,14 +33,14 @@
       const detail = document.getElementById(targetId);
       if (!detail) return;
 
-      showDetail(map, detail);
+      showDetail(grid, detail);
     });
 
     document.addEventListener("click", function (event) {
       const backBtn = event.target.closest("[data-hobbies-back]");
       if (!backBtn) return;
 
-      showMap(map, details);
+      showMap(grid, details);
     });
   });
 })();

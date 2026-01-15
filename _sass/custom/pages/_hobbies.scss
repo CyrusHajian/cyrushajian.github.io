@@ -7,71 +7,38 @@
     margin-top: 1.5rem;
   }
 
-  .hobbies-map {
-    position: relative;
-    max-width: 100%;
+  /* reuse research grid styling */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
   }
 
-  .hobbies-map.is-hidden {
+  .research-grid.is-hidden {
     display: none;
   }
 
-  .hobbies-map img {
-    width: 100%;
-    height: auto;
-    display: block;
+  .research-card {
+    min-height: 160px;
+    padding: 1.5rem;
     border-radius: 12px;
-  }
-
-  .hobbies-hotspot {
-    position: absolute;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
     color: inherit;
+    font-size: 1.05rem;
     font-weight: 600;
-    font-size: 0.95rem;
     text-align: left;
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
     cursor: pointer;
     transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    box-sizing: border-box;
   }
 
-  .hobbies-hotspot:hover,
-  .hobbies-hotspot:focus {
+  .research-card:hover,
+  .research-card:focus {
     transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.9);
-    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
     outline: none;
-  }
-
-  .hobbies-hotspot.hs-learning {
-    top: 8%;
-    left: 8%;
-    width: 38%;
-    height: 32%;
-  }
-
-  .hobbies-hotspot.hs-cooking {
-    top: 8%;
-    right: 8%;
-    width: 38%;
-    height: 32%;
-  }
-
-  .hobbies-hotspot.hs-fishing {
-    bottom: 8%;
-    left: 8%;
-    width: 38%;
-    height: 32%;
-  }
-
-  .hobbies-hotspot.hs-hiking {
-    bottom: 8%;
-    right: 8%;
-    width: 38%;
-    height: 32%;
   }
 
   .hobby-detail {
@@ -103,8 +70,8 @@
   }
 
   @media (max-width: 48em) {
-    .hobbies-hotspot {
-      font-size: 0.85rem;
+    .research-grid {
+      grid-template-columns: 1fr;
     }
   }
   .hobbies-layout {
