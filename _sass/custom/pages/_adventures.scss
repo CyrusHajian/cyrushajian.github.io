@@ -1,0 +1,67 @@
+/* =========================================================
+   Adventures page (page-scoped)
+   ========================================================= */
+
+.adventures-carousel {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.adventures-carousel__frame {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.35);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 240px;
+}
+
+.adventures-carousel__image {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  display: block;
+}
+
+.adventures-carousel__button {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+  font-size: 1.2rem;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.adventures-carousel__button:hover,
+.adventures-carousel__button:focus {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.adventures-carousel__button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 48em) {
+  .adventures-carousel {
+    grid-template-columns: 1fr;
+  }
+
+  .adventures-carousel__button {
+    width: 100%;
+    border-radius: 12px;
+  }
+}
