@@ -12,16 +12,16 @@ page_js:
 <div class="research-page">
   <div class="research-grid" data-research-grid>
     <button class="research-card" type="button" data-research-target="detail-1">
-      Carette Lab, Stanford School of Medicine
+      Host-Pathogen Interactions
     </button>
     <button class="research-card" type="button" data-research-target="detail-2">
-      O'Connell Lab, Stanford University
+      Functional Genomics
     </button>
     <button class="research-card" type="button" data-research-target="detail-3">
-      Greene Lab, UCSF/the Gladstone Institutes
+      In Vivo Work
     </button>
     <button class="research-card" type="button" data-research-target="detail-4">
-      Kennedy Lab, the Buck Institute for Research on Aging
+      Data Analysis
     </button>
   </div>
 
@@ -29,7 +29,7 @@ page_js:
     <button class="research-back" type="button" data-research-back>
       ← Back
     </button>
-    <h3>Carette Lab, Stanford School of Medicine</h3>
+    <h3>Host-Pathogen Interactions</h3>
     <p>Details for this area will go here.</p>
   </section>
 
@@ -37,7 +37,7 @@ page_js:
     <button class="research-back" type="button" data-research-back>
       ← Back
     </button>
-    <h3>O'Connell Lab, Stanford University</h3>
+    <h3>Functional Genomics</h3>
     <p>Details for this area will go here.</p>
   </section>
 
@@ -45,7 +45,7 @@ page_js:
     <button class="research-back" type="button" data-research-back>
       ← Back
     </button>
-    <h3>Greene Lab, UCSF/the Gladstone Institutes</h3>
+    <h3>In Vivo Work</h3>
     <p>Details for this area will go here.</p>
   </section>
 
@@ -53,7 +53,7 @@ page_js:
     <button class="research-back" type="button" data-research-back>
       ← Back
     </button>
-    <h3>Kennedy Lab, the Buck Institute for Research on Aging</h3>
+    <h3>Data Analysis</h3>
     <p>Details for this area will go here.</p>
   </section>
 </div>
