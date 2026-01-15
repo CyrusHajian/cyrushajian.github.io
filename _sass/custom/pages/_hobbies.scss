@@ -29,9 +29,9 @@
     background: rgba(255, 255, 255, 0.08);
     color: inherit;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     text-align: left;
-    padding: 0.5rem 0.75rem;
+    padding: 0.85rem 1.1rem;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
@@ -48,29 +48,29 @@
   .hobbies-hotspot.hs-learning {
     top: 8%;
     left: 8%;
-    width: 38%;
-    height: 32%;
+    width: 42%;
+    height: 36%;
   }
 
   .hobbies-hotspot.hs-cooking {
     top: 8%;
     right: 8%;
-    width: 38%;
-    height: 32%;
+    width: 42%;
+    height: 36%;
   }
 
   .hobbies-hotspot.hs-fishing {
     bottom: 8%;
     left: 8%;
-    width: 38%;
-    height: 32%;
+    width: 42%;
+    height: 36%;
   }
 
   .hobbies-hotspot.hs-hiking {
     bottom: 8%;
     right: 8%;
-    width: 38%;
-    height: 32%;
+    width: 42%;
+    height: 36%;
   }
 
   .hobby-detail {
@@ -103,7 +103,8 @@
 
   @media (max-width: 48em) {
     .hobbies-hotspot {
-      font-size: 0.85rem;
+      font-size: 1rem;
+      padding: 0.7rem 0.9rem;
     }
   }
   .hobbies-layout {
