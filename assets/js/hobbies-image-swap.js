@@ -13,11 +13,7 @@
   function setGhosts(container, upcoming) {
     if (!container) return;
 
-    // Ghost images are now in the parent container, not inside swap-stack
-    const parentContainer = container.closest(".two-col-image");
-    if (!parentContainer) return;
-
-    const ghosts = parentContainer.querySelectorAll(".swap-stack__ghost");
+    const ghosts = container.querySelectorAll(".swap-stack__ghost");
     if (ghosts[0] && upcoming[0]) ghosts[0].src = upcoming[0];
     if (ghosts[1] && upcoming[1]) ghosts[1].src = upcoming[1];
   }
@@ -110,34 +106,7 @@
           parentContainer.classList.add("has-swap-container");
         }
         
-        // Move ghost images outside black container to show peek effect
-        const ghosts = Array.from(container.querySelectorAll(".swap-stack__ghost"));
-        ghosts.forEach((ghost, index) => {
-          if (ghost.parentElement === container) {
-            container.removeChild(ghost);
-            parentContainer.appendChild(ghost);
-            // Position ghosts to peek out from top-right corner
-            ghost.style.position = "absolute";
-            ghost.style.width = "28%";
-            ghost.style.maxWidth = "140px";
-            ghost.style.aspectRatio = `${aspectRatio}`;
-            ghost.style.borderRadius = "8px";
-            ghost.style.opacity = "0.65";
-            ghost.style.zIndex = "1";
-            ghost.style.pointerEvents = "none";
-            ghost.style.boxShadow = "0 4px 16px rgba(0, 0, 0, 0.4)";
-            ghost.style.objectFit = "cover";
-            
-            // Position first ghost at top-right, second slightly offset
-            if (index === 0) {
-              ghost.style.top = "6px";
-              ghost.style.right = "6px";
-            } else {
-              ghost.style.top = "14px";
-              ghost.style.right = "14px";
-            }
-          }
-        });
+        // Keep ghost images inside the stack for a stacked-photo look
         
         // Apply sizing to main image for centering
         img.style.width = "100%";

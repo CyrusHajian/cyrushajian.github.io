@@ -126,7 +126,7 @@
   .swap-stack.has-swap-images {
     background-color: #000000;
     border-radius: 12px;
-    overflow: hidden;          /* ensures rounded corners clip content */
+    overflow: visible;         /* allow stacked ghosts to peek outside */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,9 +162,19 @@
   }
 
   .swap-stack__ghost {
-    /* Ghost images are now positioned outside container via JavaScript */
-    /* Base styles - will be overridden by JavaScript inline styles */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: auto;
     display: block;
+    border-radius: 12px;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 1;
+    transform: scale(0.985);
+    object-fit: cover;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
   }
 
   .swap-caption {
