@@ -95,13 +95,13 @@ Although, science has a beautiful way of bleeding into everything.
           <img
             class="js-swap-img swap-stack__main"
             src="{{ '/assets/images/bodegafishing.jpg' | relative_url }}"
-            data-swap="{{ '/assets/images/bodegafishing_2.png' | relative_url }}"
-            data-captions="a conversation at a small market led to a secret midnight fishing spot, calm water at dusk from the kayak"
+            data-swap="{{ '/assets/images/bodegafishing_2.png' | relative_url }}, {{ '/assets/images/fishing 3.jpg' | relative_url }}"
+            data-captions="a conversation at a small market led to a secret midnight fishing spot, calm water at dusk from the kayak, Fishing along the shoreline"
             alt="Fishing"
           >
           <img
             class="swap-stack__ghost"
-            src="{{ '/assets/images/bodegafishing_2.png' | relative_url }}"
+            src="{{ '/assets/images/fishing 3.jpg' | relative_url }}"
             alt=""
             aria-hidden="true"
           >
@@ -129,13 +129,13 @@ Although, science has a beautiful way of bleeding into everything.
           <img
             class="js-swap-img swap-stack__main"
             src="{{ '/assets/images/mountain.jpg' | relative_url }}"
-            data-swap="{{ '/assets/images/hiking-placeholder-1.jpg' | relative_url }}, {{ '/assets/images/hiking-placeholder-2.jpg' | relative_url }}"
+            data-swap="{{ '/assets/images/hiking-placeholder-1.jpg' | relative_url }}, {{ '/assets/images/hiking 2.jpg' | relative_url }}"
             data-captions="Exploring the natural beauty of the Pacific Northwest, Hiking in the Pacific Northwest, Nature exploration"
             alt="Hiking"
           >
           <img
             class="swap-stack__ghost"
-            src="{{ '/assets/images/hiking-placeholder-1.jpg' | relative_url }}"
+            src="{{ '/assets/images/hiking 2.jpg' | relative_url }}"
             alt=""
             aria-hidden="true"
           >
